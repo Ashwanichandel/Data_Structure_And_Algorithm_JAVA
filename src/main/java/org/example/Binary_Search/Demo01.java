@@ -3,7 +3,7 @@ package org.example.Binary_Search;
 public class Demo01 {
     public static void main(String[] args) {
         int[] arr = {12, 23, 24, 25, 26, 27, 28, 29};
-        int target = 24;
+        int target = 23;
         System.out.println(binarySearch(arr, target));
     }
 
