@@ -1,13 +1,13 @@
 package org.example.Binary_Search;
 
-public class Ceiling {
+public class Floor {
     public static void main(String[] args) {
-        int[] arr = {12, 23, 24, 25, 27, 28, 29};
-        int target = 27;
-        System.out.println(cieling(arr, target));
+        int[] arr = {12, 23, 24, 27, 28, 29};
+        int target = 26;
+        System.out.println(floor(arr, target));
     }
 
-    static int cieling(int arr[], int target) {
+    static int floor(int arr[], int target) {
         int start = 0;
         int end = arr.length - 1;
         while (start <= end) {
@@ -23,6 +23,6 @@ public class Ceiling {
                 return mid;
             }
         }
-        return start;
+        return end;
     }
 }
