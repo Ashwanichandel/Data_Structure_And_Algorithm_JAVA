@@ -1,6 +1,6 @@
 package org.example.Binary_Search;
 
-public class Demo01 {
+public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {12, 23, 24, 25, 26, 27, 28, 29};
         int target = 23;
