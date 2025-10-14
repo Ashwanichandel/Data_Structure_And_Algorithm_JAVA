@@ -17,8 +17,10 @@ public class InfinityArray {
         }
         return binarySearch(arr,target,start,end);
     }
+    //binary search
     static int binarySearch(int [] arr, int target, int start, int end){
         while (start<=end){
+
             int mid=start+(end-start)/2;
             if(target<arr[mid]){
                 end=mid+1;
