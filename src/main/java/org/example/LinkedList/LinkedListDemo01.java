@@ -4,16 +4,15 @@ class Node {
     int data;
     Node next;
 
-    public Node(int data, Node next1) {
+    public Node(int data, Node next) {
+        this.next = next;
         this.data = data;
-        this.next = next1;
     }
 
     public Node(int data) {
-        this.data = data;
         this.next = null;
+        this.data = data;
     }
-
 }
 
 public class LinkedListDemo01 {
@@ -39,20 +38,21 @@ public class LinkedListDemo01 {
         }
         return head;
     }
-/**
- * // traverse to the LL
- * // find out the length of link list
- *
- * @return
- */
+
+    /**
+     * // traverse to the LL
+     * // find out the length of link list
+     *
+     * @return
+     */
 //length of LL
-    private static int lengthOfLL(Node head){
-    int cnt=0;
-    Node temp=head;
-    while (temp!=null){
-        temp=temp.next;
-        cnt++;
-    }
-    return cnt;
+    private static int lengthOfLL(Node head) {
+        int cnt = 0;
+        Node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            cnt++;
+        }
+        return cnt;
     }
 }
