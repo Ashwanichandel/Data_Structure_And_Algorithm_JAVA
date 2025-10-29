@@ -16,7 +16,6 @@ public class StreamApiDemo01 {
         listOfEmployee.add(new Employe("Martin", "male", 5800000D, 9123456789L, 41));
         listOfEmployee.add(new Employe("Smith", "male", 67000D, 9988776655L, 29));
         listOfEmployee.add(new Employe("Virat", "male", 120000D, 9090909090L, 32));
-
         listOfEmployee.add(new Employe("Priya", "female", 76000D, 9876501234L, 25));
         listOfEmployee.add(new Employe("Ananya", "female", 490000D, 9823456789L, 30));
         listOfEmployee.add(new Employe("Sneha", "female", 6100000D, 9765432109L, 39));
@@ -44,5 +43,8 @@ public class StreamApiDemo01 {
         for (String name : listOfEmpName) {
             System.out.println(name);
         }
+        System.out.println("\n===================== ** find employee highest salary  ** =====================");
+        double maxSal = listOfEmployee.stream().mapToDouble(Employe::empSal).max().orElseThrow();
+        System.out.println(maxSal);
     }
 }
