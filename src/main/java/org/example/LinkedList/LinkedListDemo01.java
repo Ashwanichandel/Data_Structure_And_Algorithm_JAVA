@@ -20,6 +20,7 @@ public class LinkedListDemo01 {
     public static void main(String[] args) {
         int arr[] = {2, 4, 7, 9};
         Node node = new Node(arr[3]);
+
         System.out.println(node.data);
     }
 
