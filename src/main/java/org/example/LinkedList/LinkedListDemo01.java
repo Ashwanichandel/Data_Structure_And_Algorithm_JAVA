@@ -40,6 +40,7 @@ public class LinkedListDemo01 {
     }
 
     /**
+     *
      * // traverse to the LL
      * // find out the length of link list
      *
