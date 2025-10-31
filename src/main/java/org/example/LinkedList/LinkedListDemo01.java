@@ -13,19 +13,29 @@ class Node {
         this.next = null;
         this.data = data;
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node temp = this;
+        while (temp != null) {
+            sb.append(temp.data).append(" ");
+            temp = temp.next;
+        }
+        return sb.toString().trim();
+    }
 }
 
 public class LinkedListDemo01 {
     public static void main(String[] args) {
-        int arr[] = {2, 4, 7, 9};
-        Node node = new Node(arr[3]);
+        int arr[] = {12, 5, 6, 8};
+        //Node node = new Node(arr[3]);
         Node head = convertArrToLL(arr);
         /*Node temp = head;
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }*/
-        System.out.println(lengthOfLL(head));
+        System.out.println(removeHead(head));
     }
 
     private static Node convertArrToLL(int arr[]) {
@@ -40,7 +50,6 @@ public class LinkedListDemo01 {
     }
 
     /**
-     *
      * // traverse to the LL
      * // find out the length of link list
      *
@@ -55,5 +64,18 @@ public class LinkedListDemo01 {
             cnt++;
         }
         return cnt;
+    }
+
+    /**
+     * Delete element in LL
+     *
+     * @return
+     */
+    private static Node removeHead(Node head) {
+        if (head == null)
+            return head;
+
+        head = head.next;
+        return head;
     }
 }
