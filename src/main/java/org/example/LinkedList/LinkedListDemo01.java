@@ -90,6 +90,7 @@ public class LinkedListDemo01 {
         }
         temp.next = null;
         return head;
+
     }
 
     //remove Kth element from LinkedList;
