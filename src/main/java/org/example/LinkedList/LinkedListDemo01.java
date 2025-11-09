@@ -13,6 +13,7 @@ class Node {
         this.next = null;
         this.data = data;
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -35,7 +36,7 @@ public class LinkedListDemo01 {
             System.out.println(temp.data);
             temp = temp.next;
         }*/
-        System.out.println(removeHead(head));
+        System.out.println(removeTailLL(head));
     }
 
     private static Node convertArrToLL(int arr[]) {
@@ -67,7 +68,8 @@ public class LinkedListDemo01 {
     }
 
     /**
-     * Delete element in LL
+     * Delete element [head]
+     * in LL
      *
      * @return
      */
@@ -78,4 +80,18 @@ public class LinkedListDemo01 {
         head = head.next;
         return head;
     }
+
+    //remove the element from tail in LinkedList
+    private static Node removeTailLL(Node head) {
+        if (head == null || head.next == null) return null;
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+
+    }
+
+    //remove Kth element from LinkedList;
 }
