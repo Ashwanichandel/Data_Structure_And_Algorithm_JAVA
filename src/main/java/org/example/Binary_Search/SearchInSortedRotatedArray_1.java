@@ -1,6 +1,6 @@
 package org.example.Binary_Search;
 
-public class SearchInSortedRotatedArray {
+public class SearchInSortedRotatedArray_1 {
     public static void main(String[] args) {
         int[] arr = {27, 28, 29,12, 23, 24, 25, 26};
         int target = 23;
