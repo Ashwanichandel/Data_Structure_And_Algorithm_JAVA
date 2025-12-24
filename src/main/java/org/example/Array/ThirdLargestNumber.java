@@ -40,6 +40,7 @@ public class ThirdLargestNumber {
     static int secondLargest(int arr[]){
         Integer first=null,second=null;
         for(int num:arr){
+
             if(first==null||num>first){
                 second=first;
                 first=num;
