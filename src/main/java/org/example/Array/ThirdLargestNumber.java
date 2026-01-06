@@ -2,8 +2,8 @@ package org.example.Array;
 
 public class ThirdLargestNumber {
     public static void main(String[] args) {
-        int[] arr = {10, 4, 7, 9, 20, 15, 20,21,22};
-        System.out.println(secondLargest(arr));
+        int[] arr = {10, 4, 7, 9, 20, 15, 20,21,22,20,2,3,4};
+        System.out.println(secondLLargest(arr));
     }
 
     static void thirdLargestNumber(int arr[]) {
@@ -40,7 +40,6 @@ public class ThirdLargestNumber {
     static int secondLargest(int arr[]){
         Integer first=null,second=null;
         for(int num:arr){
-
             if(first==null||num>first){
                 second=first;
                 first=num;
@@ -50,5 +49,17 @@ public class ThirdLargestNumber {
         }
         return second;
     }
+    static Integer secondLLargest(int[] arr){
+        Integer first=null,second=null;
+        for (int num:arr) {
+            if(first==null || num>first){
+                second=first;
+                first=num;
+            }else if(second==null || num>second && first!=num){
+                second=num;
+            }
+        }return second;
+    }
+
 
 }
