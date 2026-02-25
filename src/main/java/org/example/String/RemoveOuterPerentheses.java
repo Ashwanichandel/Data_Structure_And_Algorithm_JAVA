@@ -3,10 +3,10 @@ package org.example.String;
 public class RemoveOuterPerentheses {
     public static void main(String[] args) {
         String str = "((()))";
-        System.out.println(removeOyterPerenthese(str));
+        System.out.println(removeOuterPerenthese(str));
     }
 
-    static String removeOyterPerenthese(String str) {
+    static String removeOuterPerenthese(String str) {
         StringBuilder result = new StringBuilder();
         int bal = 0;
         //char ch[]=str.toCharArray();
