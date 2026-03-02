@@ -3,7 +3,7 @@ package org.example.Array;
 public class ThirdLargestNumber {
     public static void main(String[] args) {
         int[] arr = {10, 4, 7, 9, 20, 15, 20,21,22,20,2,3,4};
-        System.out.println(secondLLargest(arr));
+        System.out.println(thirdL(arr));
     }
 
     static void thirdLargestNumber(int arr[]) {
@@ -61,5 +61,38 @@ public class ThirdLargestNumber {
         }return second;
     }
 
+    public static  int ss(int arr[]){
+        Integer first=null;
+        Integer second=null;
+        for(int num:arr)
+        {
+            if(first==null || num>first){
+                second=first;
+                first=num;
+            }else if(second==null || num>second && num!=first){
+                second=num;
+            }
+        }
+        return  second;
+    }
+
+    public static int thirdL(int arr[]){
+        Integer first=null;
+        Integer second= null;
+        Integer third= null;
+        for(int num:arr){
+            if(first==null || num>first){
+                third=second;
+                second=first;
+                first=num;
+            }else if(second==null || num>second && first!=num){
+                third=second;
+                second=num;
+            }else if(third==null || num>third && second!=num && first!=num){
+                third=num;
+            }
+        }
+        return third;
+    }
 
 }
