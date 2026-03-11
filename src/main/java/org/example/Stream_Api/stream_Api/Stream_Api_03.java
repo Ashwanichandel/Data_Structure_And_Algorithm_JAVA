@@ -28,6 +28,7 @@ public class Stream_Api_03 {
         System.out.println("********Retrived the list of female employee*********");
         list.stream().filter(t -> t.stdGender().equals("female")).forEach(System.out::println);
 
+
         System.out.println("\nlist of employee  who has age more than 30\n");
         list.stream().filter(emp->emp.stdAge()>30 && emp.stdGender().equals("female")).forEach(System.out::println);
 
