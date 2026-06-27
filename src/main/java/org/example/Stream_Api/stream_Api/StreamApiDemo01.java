@@ -9,7 +9,7 @@ record Employe(String empName, String empGen, Double empSal, Long empPhNo, int a
 
 public class StreamApiDemo01 {
     public static void main(String[] args) {
-        ArrayList<Employe> listOfEmployee = new ArrayList<>();
+        ArrayList<Employye> listOfEmployee = new ArrayList<>();
 
         listOfEmployee.add(new Employe("Scott", "male", 72000D, 9876543210L, 27,"IT"));
         listOfEmployee.add(new Employe("John", "male", 510000D, 9898765432L, 34,"Finance"));
@@ -36,14 +36,14 @@ public class StreamApiDemo01 {
 
 
         System.out.println("\n=====================** list of employee who has age >30=====================");
-        List<Employe> listOfempAge = listOfEmployee.stream().filter(emp -> emp.age() > 30).collect(Collectors.toList());
+        List<Employye> listOfempAge = listOfEmployee.stream().filter(emp -> emp.age() > 30).collect(Collectors.toList());
         listOfempAge.forEach(emp -> System.out.println(emp));
         System.out.println("\n=====================** employee count who has age >30=====================");
         long count = listOfempAge.stream().count();
         System.out.println(count);
         System.out.println("\n=====================** *********  =====================");
-        List<Employe> empSal = listOfEmployee.stream().filter(emp -> emp.empSal() > 50000).collect(Collectors.toList());
-        for (Employe employe : empSal) {
+        List<Employye> empSal = listOfEmployee.stream().filter(emp -> emp.empSal() > 50000).collect(Collectors.toList());
+        for (Employye employe : empSal) {
             System.out.println(employe);
         }
         System.out.println("\n===================== ** create a list of employee name ** =====================");
@@ -52,7 +52,7 @@ public class StreamApiDemo01 {
             System.out.println(name);
         }
         System.out.println("\n===================== ** find employee highest salary  ** =====================");
-        double maxSal = listOfEmployee.stream().mapToDouble(Employe::empSal).max().orElseThrow();
+        double maxSal = listOfEmployee.stream().mapToDouble(Employye::empSal).max().orElseThrow();
         System.out.println(maxSal);
 
 
