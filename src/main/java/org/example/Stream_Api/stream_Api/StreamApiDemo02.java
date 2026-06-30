@@ -31,6 +31,11 @@ public class StreamApiDemo02 {
                                 .sorted(Comparator.comparing(Employee::empSal).reversed())
                                 .skip(1).findFirst())));
 
+      Map<String,Optional<Employee>> map2=  listOfEmployee.stream().collect(Collectors.groupingBy(
+                Employee::dept,Collectors.collectingAndThen(
+                        Collectors.toList(),list->list.stream()
+                                .sorted(Comparator.comparing(Employee::empSal).reversed()).skip(1).findFirst())));
+
         collect.forEach((k, v) -> System.out.println(k + " : " + v));
 
 
@@ -39,6 +44,7 @@ public class StreamApiDemo02 {
 
         int sum = listrOfNum.stream().mapToInt(Integer::intValue).sum();
         System.out.println("Sum:: " + sum);
+        int sum1 = listrOfNum.stream().mapToInt(Integer::intValue).sum();
         /*
 
          */
@@ -47,16 +53,22 @@ public class StreamApiDemo02 {
         List<Integer> list = listrOfNum.stream().filter(num -> !set.add(num)).collect(Collectors.toList());
         list.forEach(System.out::println);
 
+       // List<Integer> collected = listrOfNum.stream().filter(num -> !set.add(num)).collect(Collectors.toList());
+
         // remove duplicate
         System.out.println("Removing  Duplicate from this list ::" + listrOfNum);
         List<Integer> listDuplicateRemove = listrOfNum.stream().distinct().collect(Collectors.toList());
         listDuplicateRemove.forEach(System.out::println);
 
+
         double avg = listrOfNum.stream().mapToInt(Integer::intValue).average().orElse(0);
         System.out.println("Find average::" + avg);
 
+
         int secondHighest = listrOfNum.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(0);
         System.out.println("Find Second Higest::" + secondHighest);
+
+
 
       /*
       String
@@ -109,6 +121,8 @@ public class StreamApiDemo02 {
                 .filter(e -> e.getValue() == 1)
                 .map(Map.Entry::getKey).findFirst().orElse(null);
         System.out.println(result);
+
+
 
         System.out.println("============Find the First Repeated Character===========");
 
