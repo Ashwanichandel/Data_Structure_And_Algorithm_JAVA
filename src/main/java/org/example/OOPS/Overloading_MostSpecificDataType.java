@@ -16,15 +16,14 @@ class Test {
         short > byte*/
     }
 }
-class Base
-{
-    public static void m1()
-    {
+
+class Base {
+    public static void m1() {
         System.out.println("Static method of super class..");
     }
 }
-class Derived extends Base
-{
+
+class Derived extends Base {
     /*public static int m1()  //sub class method can't hide super
     {                        //class method
 

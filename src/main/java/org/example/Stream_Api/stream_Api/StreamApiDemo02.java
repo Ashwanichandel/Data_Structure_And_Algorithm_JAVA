@@ -164,6 +164,9 @@ public class StreamApiDemo02 {
         listOfEmployee.stream().collect(Collectors.groupingBy(Employee::dept,Collectors.counting())).forEach((k,v)-> System.out.println(k+"->"+v));
 
         Employee employee1 = listOfEmployee.stream().sorted(Comparator.comparing(Employee::empSal).reversed()).skip(1).findFirst().orElse(null);
+        Employee employee2 = listOfEmployee.stream().sorted(Comparator.comparing(Employee::empSal).reversed()).skip(1).findFirst().orElse(null);
+
+
         System.out.println(employee1);
     }
 
